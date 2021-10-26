@@ -1,0 +1,25 @@
+#laboratorium {
+    .text-title{
+        font-size: 15px;
+    }
+    .laboratorium{
+        .images-caraousel {
+            max-width: 75%;
+            width: 90%;
+            max-height: 75%;
+            height: 90%;
+        }
+        .VueCarousel {
+            .VueCarousel-navigation {
+                @include media-breakpoint-down(sm) {
+                    display: none;
+                }
+                display: block;
+                .VueCarousel-navigation-button[data-v-453ad8cd] {
+                    top: 34%;
+                }
+            }
+        }
+    }
+
+}

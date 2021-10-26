@@ -1,0 +1,50 @@
+.Berita-caraosel{
+    .carousel{
+        .carousel-inner{
+            .carousel-item{
+                img{
+                    max-height: 425px;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: 0% 0%;
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+    .time{
+        color: #C4C4C4;
+        margin-right: 1.5rem;
+        i{
+            margin-right: 0.5rem;
+        }
+        @include media-breakpoint-down(md) {
+            p{
+                font-size: 13px;
+            }
+        }
+    }
+    .category{
+        color: #C4C4C4;
+        margin-right: 1.5rem;
+        i{
+            margin-right: 0.5rem;
+        }
+        @include media-breakpoint-down(md) {
+            p{
+                font-size: 13px;
+            }
+        }
+    }
+}
+.Berita-details{
+    margin-top: 1rem;
+    @include media-breakpoint-down(md) {
+        h3{
+            font-size: 15px;
+        }
+        p{
+            font-size: 12px;
+        }
+    }
+}

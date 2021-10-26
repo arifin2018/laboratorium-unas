@@ -1,0 +1,23 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,700;1,600&family=Roboto:wght@300;400;500;700&display=swap");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// Includes
+@import "includes/navbarDashboard";
+@import "includes/footer";
+
+// Pages
+
+@import "pages/login";
+@import "pages/dashboard";
+@import "pages/berita";
+@import "pages/detailsLab";
+@import "pages/transaksi";
+@import "pages/laboratorium";
+@import "pages/visiMisi";
+@import "pages/semuaBerita";

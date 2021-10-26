@@ -1,0 +1,44 @@
+.breadcrumb-transaksi {
+    nav {
+        ol {
+            &.breadcrumb {
+                background-color: transparent;
+                padding: 0;
+            }
+            .breadcrumb-item {
+                a {
+                    color: #38c172;
+                    &:hover {
+                        color: #38c172;
+                    }
+                }
+            }
+        }
+    }
+}
+.transaksi {
+    .card {
+        border-radius: 20px;
+        font-family: "Roboto", sans-serif;
+    }
+    .Ilustrator-images-done {
+        width: 80%;
+        max-width: 100%;
+    }
+}
+
+.transaksi-berhasil {
+    img {
+        width: 20%;
+        max-width: 50%;
+        @include media-breakpoint-down(md) {
+            width: 100%;
+        }
+    }
+    h5 {
+        width: 45%;
+        @include media-breakpoint-down(md) {
+            width: 65%;
+        }
+    }
+}

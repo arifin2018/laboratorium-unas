@@ -1,0 +1,13 @@
+.navbarDashboard{
+    .navbar-nav{
+        .nav-link{
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            padding-right: 0.8rem;
+            padding-left: 0.8rem;
+            &:active{
+                color: #0C0D36;
+            }
+        }
+    }
+}
