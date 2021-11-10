@@ -20,6 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Route::get('/allLaboratorium',[DashboardController::class, 'allLaboratorium'])->name('allLaboratorium');
-Route::get('/laboratorium/{search}',[DashboardController::class, 'whereAllLab'])->name('whereAllLab');
+Route::get('/laboratorium',[DashboardController::class, 'whereAllLab'])->name('whereAllLab');
 Route::get('jurusan/{prodi_id}',[JurusanProdiController::class, 'Jurusan'])->name('jurusanAPI');
 Route::get('prodi',[JurusanProdiController::class, 'Prodi'])->name('ProdiAPI');

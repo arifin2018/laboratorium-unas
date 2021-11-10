@@ -19,9 +19,8 @@
                             </div>
                         @endif
                     </div>
-                    <form action="{{ route('users.create') }}" method="POST">
+                    <form action="{{ url('register') }}" method="POST">
                         @csrf
-                        @method('PUT')
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" class="form-control" name="name" id="name" required value="{{ old('name') }}">

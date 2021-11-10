@@ -21,18 +21,7 @@ class JurusanController extends Controller
         if ($request->ajax()) {
             $data = Jurusan::with(['prodi']);
             return DataTables::of($data)
-            ->addColumn('action', function($item){
-                return '<div class="d-flex">
-                    <a href="'.route('jurusan.edit', $item->id).'" class="btn btn-primary mx-1"><i class="fas fa-pen-square"></i></a>
-                    <form action="'.route('jurusan.destroy', $item->id).'" method="POST" class="mx-1">
-                        '.csrf_field().method_field('delete').'
-                        <button type="submit" class="btn btn-danger">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </form>
-                </div>
-                ';
-            })
+            ->addColumn('action','datatables')
             ->rawColumns(['action'])
             ->make();
         }

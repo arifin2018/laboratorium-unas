@@ -48,7 +48,7 @@
             },
             {
                 data: 'name',
-                name: 'Name'
+                name: 'name'
             },
             {
                 data: 'action',

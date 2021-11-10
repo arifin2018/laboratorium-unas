@@ -9,7 +9,6 @@ use App\Models\DashboardCaraosel;
 use App\Models\DetailRuangan;
 use App\Models\TransaksiDetail;
 use App\Models\VisiMisi;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -55,12 +54,20 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function Laboratorium()
+    public function Laboratorium(Request $request)
     {
         $lab =  DetailRuangan::with(['Gallery'])->get();
+        // $searchLive = DetailRuangan::with(['Gallery'])->where('title' , 'LIKE', $request->keywords)->get();
         return view('pages.user.Laboratorium',[
-            'lab' => $lab
+            'lab'           => $lab,
+            // 'searchLive'   => $searchLive
         ]);
+    }
+
+    public function whereAllLab(Request $request)
+    {
+        $data =  DetailRuangan::with(['Gallery'])->where('title', 'LIKE', "%$request->keywords%")->get();
+        return response()->json($data);
     }
 
     public function visimisi()
@@ -70,4 +77,5 @@ class DashboardController extends Controller
             'data'  => $data
         ]);
     }
+
 }

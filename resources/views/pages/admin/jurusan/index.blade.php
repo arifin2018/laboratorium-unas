@@ -49,11 +49,11 @@
             },
             {
                 data: 'prodi.name',
-                name: 'Prodi'
+                name: 'prodi.name'
             },
             {
                 data: 'name',
-                name: 'Jurusan'
+                name: 'name'
             },
             {
                 data: 'action',

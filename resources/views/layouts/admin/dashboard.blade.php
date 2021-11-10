@@ -125,7 +125,7 @@
     <script src="{{ url('assets/admin/js/demo/chart-pie-demo.js') }}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ url('assets/libraries/DataTables/datatables.min.js') }}"></script>
-    <script src="{{ url('assets/libraries/DataTables/js/dataTables.bootstrap4.js') }}"></script>
+    <script src="{{ url('assets/libraries/DataTables/DataTablesAssets/js/dataTables.bootstrap4.js') }}"></script>
     @stack('addon-js')
 </body>
 

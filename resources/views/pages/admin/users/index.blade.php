@@ -43,6 +43,7 @@
             processing: true,
             serverSide: true,
             ordering: true,
+            
             ajax: {
                 url: '{!! url()->current() !!}',
             },
@@ -52,27 +53,27 @@
             },
             {
                 data: 'name',
-                name: 'name'
+                // name: 'name'
             },
             {
                 data: 'email',
-                name: 'email'
+                // name: 'email'
             },
             {
                 data: 'username',
-                name: 'username'
+                // name: 'username'
             },
             {
                 data: 'prodi.name',
-                name: 'prodi.name'
+                // name: 'prodi.name'
             },
             {
                 data: 'jurusan.name',
-                name: 'jurusan.name'
+                // name: 'jurusan.name'
             },
             {
                 data: 'roles',
-                name: 'roles'
+                // name: 'roles'
             },
             {
                 data: 'action',
@@ -82,5 +83,12 @@
             },
             ]
         })
+        datatables
+            .order( [[ 1, 'asc' ]] )
+            .draw( false );
+
+            datatables.on('draw', function () {
+                console.log( 'Response timing: '+new Date().getTime() );
+            } );
     </script>
 @endpush
