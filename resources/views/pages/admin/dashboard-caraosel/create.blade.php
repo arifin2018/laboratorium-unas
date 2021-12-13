@@ -1,5 +1,5 @@
 @extends('layouts.admin.dashboard')
-@section('title','Dashboard')
+@section('title','Dashboard Caraousel')
 @section('content')
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard Caraosel</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard Caraosel Create</h1>
                         @if ($errors->any())
                             <div class="alert alert-danger">
                                 <ul>

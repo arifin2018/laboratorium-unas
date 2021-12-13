@@ -1,5 +1,5 @@
 @extends('layouts.admin.dashboard')
-@section('title','Dashboard')
+@section('title','Dashboard Caraousel')
 @section('content')
 <!-- Begin Page Content -->
 <div class="container-fluid">

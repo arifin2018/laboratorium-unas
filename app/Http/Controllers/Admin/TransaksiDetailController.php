@@ -19,20 +19,6 @@ class TransaksiDetailController extends Controller
         if (request()->ajax()) {
             $data = TransaksiDetail::with(['detail_ruangan'])->get();
             return DataTables::of($data)
-            ->addColumn('action', function($item){
-                // $btn = '<a href="javascript:void(0)" class="edit btn btn-primary">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger">Delete</a>';
-                return '<div class="d-flex">
-                    <a href="'.route('transaksi-detail.edit', $item->id).'" class="btn btn-primary mx-1"><i class="fas fa-pen-square"></i></a>
-                    <form action="'.route('transaksi-detail.destroy', $item->id).'" method="POST" class="mx-1">
-                        '.csrf_field().method_field('delete').'
-                        <button type="submit" class="btn btn-danger">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </form>
-                </div>
-                ';
-            })
-            ->rawColumns(['action'])
             ->make();
         }
         return view('pages.admin.transaksi-detail.index');
@@ -102,8 +88,6 @@ class TransaksiDetailController extends Controller
      */
     public function destroy($id)
     {
-        $data = TransaksiDetail::findOrFail($id);
-        $data->delete();
-        return redirect()->back();
+
     }
 }

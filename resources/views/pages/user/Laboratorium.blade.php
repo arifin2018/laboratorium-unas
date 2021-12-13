@@ -3,8 +3,9 @@
 @section('content')
 <div class="container" id="laboratorium">
     <div class="d-flex justify-content-between mb-3">
-        <h3 class="text-title">Laboratorium universitas nasional</h3>
+        <h3 class="text-title pt-2">Laboratorium universitas nasional</h3>
         <input type="text" class="form-control w-25" placeholder="input keywords..." v-model="keywords">
+        {{-- <p v-text="lastResponse + ' ms'"></p> --}}
     </div>
     <section class="laboratorium" data-aos="fade-up">
         <div v-if="results.length <= 0 || results === null">
@@ -30,7 +31,7 @@
                         <span v-html="image.title" class="d-flex justify-content-center"></span>
                     </div>
                     <div class="d-block">
-                        <a :href="image.url" class="btn btn-success d-flex justify-content-center mx-auto w-75">
+                        <a :href="'/Laboratorium/' + image.slug" class="btn btn-success d-flex justify-content-center mx-auto w-75">
                             View Details
                         </a>
                     </div>
@@ -61,23 +62,20 @@
                         @endforeach
                     ],
                     keywords: null,
-                    results: []
+                    results: [],
+                    lastResponse:''
                 }
             },
             methods: {
-                // fetchImages(){
-                //     let params = _.isEmpty(this.search) ? 'all' : this.search
-                //     axios.get('/api/laboratorium/' + params).then(({data}) => {
-                //         this.image = data
-                //         console.log(this.image);
-                //     });
-                    
-                // },
                 fetch() {
+                    // this.fisrtResponse = console.time('response');
+                    let fisrtResponse = performance.now();
                     axios.get('/api/laboratorium', { params: { keywords: this.keywords } })
                         .then(response => this.results = response.data)
                         .catch(error => {});
-                        console.log(this.results);
+                    // this.lastResponse = console.timeEnd('response');
+                    this.lastResponse = performance.now() - fisrtResponse;
+                    console.log(this.lastResponse + " ms");
                 }
             },
             watch:{

@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Jurusan Update</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Jurusan Create</h1>
                         @if ($errors->any())
                             <div class="alert alert-danger">
                                 <ul>
@@ -22,7 +22,7 @@
                     <form action="{{ route('jurusan.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="prodi_id">prodi_id</label>
+                            <label for="prodi_id">Prodi name</label>
                             <select class="custom-select" name="prodi_id" id="prodi_id" required>
                                 @foreach ($datas as $data)
                                     <option value="{{ $data->id }}">{{ $data->name }}</option>

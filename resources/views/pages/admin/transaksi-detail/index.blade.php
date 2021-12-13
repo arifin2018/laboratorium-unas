@@ -11,7 +11,6 @@
                     <div class="d-flex align-items-center">
                         <h5 class="card-title font-weight-bold">transaksi Detail</h5>
                     </div>
-                    
                     <table class="table" id="crudTable">
                         <thead>
                             <tr>
@@ -19,33 +18,10 @@
                                 <th scope="col">Ruangan</th>
                                 <th scope="col">Transaksi Waktu</th>
                                 <th scope="col">Jumlah</th>
-                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @forelse ($datas as $data => $index)
-                            <tr>
-                                <th scope="row">{{ $data+1 }}</th>
-                                <td>{{ $index->detail_ruangan->title }}</td>
-                                <td>{{ $index->transaksi_waktu }}</td>
-                                <td>{{ $index->jumlah }}</td>
-                                <td class="d-flex">
-                                    <form action="{{ route('transaksi-detail.destroy', $index->id) }}" method="POST" class="mx-1">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="btn btn-danger">
-                                            <i class="fa fa-trash"></i>
-                                        </button>
-                                    </form>
-                                </td>
-                            @empty
-                            <tr>
-                                <td colspan="8" class="text-center">
-                                    Data kosong
-                                </td>
-                            </tr>
-                            @endforelse
-                            </tr> --}}
+                            
                         </tbody>
                     </table>
                 </div>
@@ -57,15 +33,15 @@
 @endsection
 
 @push('addon-js')
-    <script>
-        var datatables = $('#crudTable').DataTable({
-            processing: true,
-            serverSide: true,
-            ordering: true,
-            ajax: {
-                url: '{!! url()->current() !!}',
-            },
-            columns: [{
+<script>
+    var datatables = $('#crudTable').DataTable({
+        processing: true,
+        serverSide: true,
+        ordering: true,
+        ajax: {
+            url: '{!! url()->current() !!}',
+        },
+        columns: [{
                 data: 'id',
                 name: 'id'
             },
@@ -81,13 +57,7 @@
                 data: 'jumlah',
                 name: 'Jumlah'
             },
-            {
-                data: 'action',
-                name: 'action',
-                orderable: false,
-                searchable: false
-            },
-            ]
-        })
-    </script>
+        ]
+    })
+</script>
 @endpush

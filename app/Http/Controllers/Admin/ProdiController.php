@@ -39,10 +39,6 @@ class ProdiController extends Controller
             ->rawColumns(['action'])
             ->make();
         }
-        $start = microtime(true);
-        usleep(250);
-        $end = microtime(true);
-        dd(($start - $end) * 1000);
         return view('pages.admin.prodi.index');
     }
 

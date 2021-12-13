@@ -108,14 +108,16 @@ class TransaksiController extends Controller
      */
     public function destroy($id)
     {
-        $data = transaksi::findOrFail($id);
+        $data = transaksi::with('transaksi_details')->findOrFail($id);
         $transaksiDetail = TransaksiDetail::findOrFail($data->transaksi_details_id);
+        // $transaksiDetailQuery = $transaksiDetail::has('transaksi')->get();
+        $dataQuery = $data::has('transaksi_details')->get();
         $data->delete();
-        $transaksiDetailQuery = $transaksiDetail::has('transaksi')->count();
-        $transaksiDetail->jumlah = isset($transaksiDetailQuery) == true ? $transaksiDetailQuery :  NULL;
+        $transaksiDetail->jumlah = count($dataQuery);
+        // $transaksiDetail->jumlah = isset($transaksiDetailQuery) == true ? $transaksiDetailQuery :  NULL;
         $transaksiDetail->save();
-
-        if ($transaksiDetail->jumlah == 0) {
+        // dd($transaksiDetail->jumlah);
+        if ($transaksiDetail->jumlah <= 1) {
             $transaksiDetail->delete();
         }
 

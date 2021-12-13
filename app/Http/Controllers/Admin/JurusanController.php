@@ -35,7 +35,7 @@ class JurusanController extends Controller
      */
     public function create()
     {
-        $datas = Jurusan::all();
+        $datas = Prodi::all();
         return view('pages.admin.jurusan.create',[
             'datas' => $datas
         ]);

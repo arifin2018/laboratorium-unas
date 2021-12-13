@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Prodi Update</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Prodi Create</h1>
                         @if ($errors->any())
                             <div class="alert alert-danger">
                                 <ul>

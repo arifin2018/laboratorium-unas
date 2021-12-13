@@ -23,7 +23,7 @@
                         @csrf
                         @method('PUT')
                         <div class="form-group">
-                            <label for="prodi_id">prodi_id</label>
+                            <label for="prodi_id">prodi name</label>
                             <select class="custom-select" name="prodi_id" id="prodi_id" required>
                                 @foreach ($prodis as $prodis)
                                     <option value="{{ $prodis->id }}" {{ $prodis->id == $data->prodi_id ? 'selected' : '' }}>{{ $prodis->name }}</option>

@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Image Detail Ruangan Create</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Image Detail Ruangan Update</h1>
                         @if ($errors->any())
                             <div class="alert alert-danger">
                                 <ul>
