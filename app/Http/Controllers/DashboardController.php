@@ -56,7 +56,13 @@ class DashboardController extends Controller
 
     public function Laboratorium(Request $request)
     {
-        $lab =  DetailRuangan::with(['Gallery'])->get();
+        // $time_start = microtime(true);
+        // algoritma sequential search
+        // $lab =  DetailRuangan::with(['Gallery'])->get();
+        $lab =  DetailRuangan::with(['Gallery'])->orderBy('title', 'ASC')->get();
+        // dd($lab);
+        // echo 'Total execution time in seconds: ' . round((microtime(true) - $time_start), 3). ' ms';
+
         // $searchLive = DetailRuangan::with(['Gallery'])->where('title' , 'LIKE', $request->keywords)->get();
         return view('pages.user.Laboratorium',[
             'lab'           => $lab,
@@ -66,7 +72,10 @@ class DashboardController extends Controller
 
     public function whereAllLab(Request $request)
     {
-        $data =  DetailRuangan::with(['Gallery'])->where('title', 'LIKE', "%$request->keywords%")->get();
+        $data =  DetailRuangan::with(['Gallery'])
+        ->where('title', 'LIKE', "%$request->keywords%")
+        ->orWhere('details', 'LIKE', "%$request->keywords%")
+        ->orderBy('title', 'ASC')->get();
         return response()->json($data);
     }
 
