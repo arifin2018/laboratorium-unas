@@ -10257,11 +10257,36 @@ h3 {
 #laboratorium .text-title {
   font-size: 15px;
 }
-#laboratorium .laboratorium .images-caraousel {
+#laboratorium .text-title .w-title {
+  width: 50%;
+}
+@media (min-width: 768px) {
+  #laboratorium .text-title .w-title {
+    width: 100%;
+  }
+}
+#laboratorium .w-input {
+  width: 50%;
+}
+@media (min-width: 768px) {
+  #laboratorium .w-input {
+    width: 25%;
+  }
+}
+#laboratorium .laboratorium .VueCarousel .images-caraousel {
   max-width: 75%;
   width: 90%;
   max-height: 75%;
   height: 90%;
+}
+#laboratorium .laboratorium .VueCarousel .desc a {
+  color: #0c0d36;
+  font-size: 1.4rem;
+  font-family: "Poppins", sans-serif;
+}
+#laboratorium .laboratorium .VueCarousel .desc a:hover {
+  text-decoration: none;
+  color: #131699;
 }
 #laboratorium .laboratorium .VueCarousel .VueCarousel-navigation {
   display: block;

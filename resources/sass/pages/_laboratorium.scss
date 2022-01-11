@@ -1,15 +1,38 @@
 #laboratorium {
-    .text-title{
+    .text-title {
         font-size: 15px;
-    }
-    .laboratorium{
-        .images-caraousel {
-            max-width: 75%;
-            width: 90%;
-            max-height: 75%;
-            height: 90%;
+        .w-title {
+            width: 50%;
+            @include media-breakpoint-up(md) {
+                width: 100%;
+            }
         }
+    }
+    .w-input {
+        width: 50%;
+        @include media-breakpoint-up(md) {
+            width: 25%;
+        }
+    }
+    .laboratorium {
         .VueCarousel {
+            .images-caraousel {
+                max-width: 75%;
+                width: 90%;
+                max-height: 75%;
+                height: 90%;
+            }
+            .desc {
+                a {
+                    color: #0c0d36;
+                    font-size: 1.4rem;
+                    font-family: "Poppins", sans-serif;
+                    &:hover {
+                        text-decoration: none;
+                        color: #131699;
+                    }
+                }
+            }
             .VueCarousel-navigation {
                 @include media-breakpoint-down(sm) {
                     display: none;
@@ -21,5 +44,4 @@
             }
         }
     }
-
 }

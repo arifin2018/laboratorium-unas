@@ -7,6 +7,6 @@
             <span class="navbar-toggler-icon"></span>
         </button> --}}
 
-        <span class="text-muted">| Laboratorium FTKI</span>
+        <span class="text-muted">| Laboratorium UNAS</span>
     </div>
 </nav>
