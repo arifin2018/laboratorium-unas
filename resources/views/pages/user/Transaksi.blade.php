@@ -27,7 +27,7 @@
         <div class="col-md-4 d-block d-md-none">
             <img src="{{ asset('assets/images/undraw_Transfer_files_re_a2a9.svg') }}" alt="Ilustrator-images-done" class="Ilustrator-images-done pl-2">
         </div>
-        <div class="card col-md-8">
+        <div class="card col-md-9">
             <div class="card-body">
                 <h5 class="card-title">Siapa ingin memesan ruangan?</h5>
                 <h6 class="card-subtitle mb-2 text-muted">{{ $DetailRuangan->title }}</h6>
@@ -40,7 +40,9 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Npm</th>
                                 <th scope="col">Jurusan</th>
-                                <th scope="col">Waktu Peminjaman</th>
+                                <th scope="col">Waktu Mulai Peminjaman</th>
+                                <th scope="col">Waktu Selesai Peminjaman</th>
+                                <th scope="col">Kegunaan</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -67,16 +69,39 @@
                                             <option value="20:00">20:00</option>
                                         </select>
                                     </td>
+                                    <td>
+                                        <select class="form-control" id="exampleFormControlSelect1" name="waktu_selesai">
+                                            <option value="08:00">08:00</option>
+                                            <option value="09:00">09:00</option>
+                                            <option value="10:00">10:00</option>
+                                            <option value="11:00">11:00</option>
+                                            <option value="12:00">12:00</option>
+                                            <option value="13:00">13:00</option>
+                                            <option value="14:00">14:00</option>
+                                            <option value="15:00">15:00</option>
+                                            <option value="16:00">16:00</option>
+                                            <option value="17:00">17:00</option>
+                                            <option value="18:00">18:00</option>
+                                            <option value="19:00">19:00</option>
+                                            <option value="20:00">20:00</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select class="form-control" id="exampleFormControlSelect1" name="kegiatan">
+                                            <option value="Belajar">Belajar</option>
+                                            <option value="Penelitian">Penelitian</option>
+                                        </select>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <button type="submit" class="btn btn-success float-right">Pesan</button>
+                        <button type="submit" class="btn btn-success float-right top">Pesan</button>
                     </form>
                 </p>
             </div>
         </div>
-        <div class="col-md-4 d-none d-md-block">
-            <img src="{{ asset('assets/images/undraw_Transfer_files_re_a2a9.svg') }}" alt="Ilustrator-images-done" class="Ilustrator-images-done pl-2">
+        <div class="col-md-3 h-100 d-none d-md-block">
+            <img src="{{ asset('assets/images/undraw_Transfer_files_re_a2a9.svg') }}" alt="Ilustrator-images-done" class="Ilustrator-images-done pl-2 h-100">
         </div>
     </div>
 </section>

@@ -38,7 +38,10 @@ class TransaksiController extends Controller
                 return redirect()->back();
             }
         }
-
+        if (substr($request->waktu, -5, 2) >= substr($request->waktu_selesai, -5, 2)) {
+            Alert::error('Error', 'Salah memilih jam waktu, silahkan pilih yang tepat pada waktu selesai mininal 1 jam');
+            return redirect()->back();
+        }
         $get_id = transaksi::create($data);
         $transaksi = transaksi::findOrFail($get_id->id);
         $transaksiWaktu = transaksi::where('waktu', $transaksi->waktu)->get();

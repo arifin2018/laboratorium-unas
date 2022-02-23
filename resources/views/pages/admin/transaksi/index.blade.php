@@ -18,8 +18,10 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Nama</th>
                                 <th scope="col">Waktu pemesanan</th>
+                                <th scope="col">Waktu selesai</th>
                                 <th scope="col">Ruangan</th>
                                 <th scope="col">Status saat ini</th>
+                                <th scope="col">Kegiatan</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -81,12 +83,20 @@
                 name: 'Waktu Pemesanan'
             },
             {
+                data: 'waktu_selesai',
+                name: 'Waktu Pemesanan'
+            },
+            {
                 data: 'detail_ruangans.title',
                 name: 'Ruangan'
             },
             {
                 data: 'status',
                 name: 'Status saat ini'
+            },
+            {
+                data: 'kegiatan',
+                name: 'Kegiatan'
             },
             {
                 data: 'action',

@@ -25,7 +25,6 @@
                         </div> --}}
                         <span v-html="photo.details"></span>
                     </div>
-                   
                 </slide>
             </carousel>
         </div>
